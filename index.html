@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lissajous Curves</title>
+  <meta name="description" content="Lissajous Curves">
+  <meta name="author" content="PiotrSokolinski">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js" type="text/javascript"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+      <div id="my-gui-container"></div>
+      <form id="colorPicker">
+        <label for="colorInput">Color Picker:</label>
+        <input id="colorChooser" name="colorInput" type="color" />
+      </form>
+      <form id="check">
+        <label for="checkbox">Saving states:</label>
+        <input id="checkbox" type="checkbox" name="checkbox" />
+      </form>
+      <div id="welcome">Welcome</div>
+      <canvas height="500" width="500" id="canvas"></canvas>
+      <button class="toogle" onclick="toogleLissajous()">Close Lissajous</button>
+    </div>
+    <script>
+        function toogleLissajous() {
+          var canvas = document.getElementById("canvas");
+          if ($(canvas).css("top") === "0px") {
+            $(canvas).addClass("canvasUp");
+            $(".toogle").addClass("buttonUp");
+            $(".toogle").html("Open Lissajous");
+          }
+          else {
+            $(canvas).removeClass("canvasUp");
+            $(".toogle").removeClass("buttonUp");
+            $(".toogle").html("Close Lissajous");
+          }
+        }
+    </script>
+</body>
+</html>
